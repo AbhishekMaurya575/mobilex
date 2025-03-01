@@ -5,15 +5,12 @@ import Header2 from "../Pages/Header/Header2";
 import React, { useState } from 'react';
 
 const Layout = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
   return (
     <div>
       <Header1 isOpen={isOpen} toggleMenu={toggleMenu} />
