@@ -3,12 +3,18 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
 
+import Product1 from '../../assets/Samsung-Galaxy-Book3-Pro-360-1.png';
+import Product2 from '../../assets/Samsung-Galaxy-Book3-Pro-360-1.png';
+import Product3 from '../../assets/Samsung-Galaxy-Book3-Pro-360-1.png';
+import Product4 from '../../assets/Samsung-Galaxy-Book3-Pro-360-1.png';
+import Product5 from '../../assets/Samsung-Galaxy-Book3-Pro-360-1.png';
+
 const bestSellers = [
-  { img: 'src/assets/Samsung-Galaxy-Book3-Pro-360-1.png', name: 'Boost Up Special Edition Wireless', price: '$260.00' },
-  { img: 'src/assets/Samsung-Galaxy-Book3-Pro-360-1.png', name: 'Noise Cancelling Headphones', price: '$90.00 - $360.00' },
-  { img: 'src/assets/Samsung-Galaxy-Book3-Pro-360-1.png', name: 'Wireless Bluetooth Speaker', price: '$90.00' },
-  { img: 'src/assets/Samsung-Galaxy-Book3-Pro-360-1.png', name: 'Boost Up Wireless Charging', price: '$200.00' },
-  { img: 'src/assets/Samsung-Galaxy-Book3-Pro-360-1.png', name: 'Apple iPad Air 2', price: '$87.00 - $142.00' }
+  { img: Product1, name: 'Boost Up Special Edition Wireless', price: '$260.00' },
+  { img: Product2, name: 'Noise Cancelling Headphones', price: '$90.00 - $360.00' },
+  { img: Product3, name: 'Wireless Bluetooth Speaker', price: '$90.00' },
+  { img: Product4, name: 'Boost Up Wireless Charging', price: '$200.00' },
+  { img: Product5, name: 'Apple iPad Air 2', price: '$87.00 - $142.00' }
 ];
 
 const BestSellersSection = () => {

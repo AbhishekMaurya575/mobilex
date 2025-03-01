@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import tabletImage from '../../assets/Samsung-Galaxy-Book3-Pro-360-1.png';
 
 const Trending = () => {
     return (
         <section className="w-full min-h-full bg-gradient-to-br from-[#0e0e24] to-[#1a1a33] flex flex-col md:flex-row items-center justify-center px-10 py-16 gap-10 text-white">
           <div className="w-full md:w-1/2 flex justify-center order-2 md:order-1">
             <img 
-              src="src/assets/Samsung-Galaxy-Book3-Pro-360-1.png" 
+              src={tabletImage} 
               alt="Top Rated Tablets" 
               className="max-w-xs sm:max-w-sm md:max-w-md object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-500"
             />

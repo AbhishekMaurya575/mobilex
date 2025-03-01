@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import HeadphoneImage from '../../assets/istockphoto-1373017594-612x612.jpg';
+import WatchImage from '../../assets/S12-Ultra-Smart-Watch-4G-Sim-Card-With-Rotating-Camera.png';
 
 const Bestoneforyou = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-8">
       <div className="relative rounded-none overflow-hidden">
-        <img src="src/assets/istockphoto-1373017594-612x612.jpg" alt="Headphones" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-none bg-opacity-50 flex flex-col items-start p-6 sm:p-10 text-white">
+        <img src={HeadphoneImage} alt="Headphones" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 flex flex-col items-start p-6 sm:p-10">
           <div className="absolute top-4 left-4 w-[80%] md:w-[40%]">
             <h3 className="uppercase text-blue-700 font-bold text-lg sm:text-xl">Great Headphones</h3>
             <h2 className="text-cyan-900 font-bold mb-4 sm:mb-6 text-4xl sm:text-6xl">Find your sound!</h2>
@@ -15,8 +17,8 @@ const Bestoneforyou = () => {
       </div>
 
       <div className="relative rounded-none overflow-hidden bg-blue-600">
-        <img src="src/assets/S12-Ultra-Smart-Watch-4G-Sim-Card-With-Rotating-Camera.png" alt="Smartwatch" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-none bg-opacity-50 flex flex-col items-start p-6 sm:p-10 text-white">
+        <img src={WatchImage} alt="Smartwatch" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 flex flex-col items-start p-6 sm:p-10">
           <div className="absolute top-4 left-4 w-[80%] md:w-[40%]">
             <h3 className="text-lg sm:text-xl font-bold uppercase">Best Smartwatch 2020</h3>
             <h2 className="text-4xl sm:text-6xl font-bold mb-4 sm:mb-6">Smartwatch for you!</h2>
@@ -25,7 +27,7 @@ const Bestoneforyou = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Bestoneforyou
+export default Bestoneforyou;
