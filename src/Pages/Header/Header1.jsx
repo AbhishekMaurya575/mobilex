@@ -23,7 +23,7 @@ const Header1 = ({ isOpen, toggleMenu }) => {
   // Function to handle menu item click and close the menu on small screens
   const handleMenuItemClick = () => {
     if (window.innerWidth < 768) {
-      toggleMenu();
+     
     }
   };
 
