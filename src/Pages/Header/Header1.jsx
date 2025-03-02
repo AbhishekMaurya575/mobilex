@@ -1,23 +1,40 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Logo from '../../components/Logo'
 import { Search, ShoppingCart, Heart, User, X, Menu } from 'lucide-react'
 
-
-const Header1 = ({ isOpen, toggleMenu }) =>  {
+const Header1 = ({ isOpen, toggleMenu }) => {
   const [showSearch, setShowSearch] = useState(false);
 
   const toggleSearch = () => {
-    setShowSearch(!showSearch);
+    setShowSearch(!showSearch);  
   }
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isOpen]);
+
+  // Function to handle menu item click and close the menu on small screens
+  const handleMenuItemClick = () => {
+    if (window.innerWidth < 768) {
+      toggleMenu();
+    }
+  };
+
   return (
-    <header className="flex items-center justify-between p-2 pt-0 bg-gray-100 shadow-md w-full">
-           <div className="md:hidden text-black cursor-pointer " onClick={toggleMenu}>
-           {!showSearch && (
-  <Menu className="absolute text-black" size={28} aria-hidden="true" />
-)}
-        </div>
-      <div className="sm:w-auto  ">
+    <header className="flex items-center justify-between p-2 pt-0 bg-gray-100 shadow-md w-full relative">
+      <div className="md:hidden text-black cursor-pointer" onClick={toggleMenu}>
+        {!showSearch && (
+          <Menu className="absolute text-black" size={28} aria-hidden="true" />
+        )}
+      </div>
+      <div className="sm:w-auto">
         <Logo />
       </div>
       <div className="flex items-center gap-6 mt-4">
@@ -32,14 +49,14 @@ const Header1 = ({ isOpen, toggleMenu }) =>  {
         </div>
         <nav className={`flex items-center gap-4 ${showSearch ? 'hidden' : ''} md:flex`}> 
           <a href="/wishlist" className="text-gray-700 hover:text-black hidden md:block" aria-label="Wishlist">Wishlist</a>
-          <a href="/wishlist" className="text-gray-700 hover:text-black md:hidden" aria-label="Wishlist">
+          <a href="/wishlist" className="text-gray-700 hover:text-black md:hidden" aria-label="Wishlist" onClick={handleMenuItemClick}>
             <Heart size={20} aria-hidden="true" />
           </a>
           <a href="/account" className="text-gray-700 hover:text-black hidden md:block" aria-label="Account">Account</a>
-          <a href="/account" className="text-gray-700 hover:text-black md:hidden" aria-label="Account">
+          <a href="/account" className="text-gray-700 hover:text-black md:hidden" aria-label="Account" onClick={handleMenuItemClick}>
             <User size={20} aria-hidden="true" />
           </a>
-          <a href="/cart" className="text-gray-700 hover:text-black flex items-center gap-1 sm:flex" aria-label="Cart">
+          <a href="/cart" className="text-gray-700 hover:text-black flex items-center gap-1 sm:flex" aria-label="Cart" onClick={handleMenuItemClick}>
             <ShoppingCart size={20} aria-hidden="true" /> <span className="hidden sm:inline">Cart</span>
           </a>
         </nav>
@@ -51,4 +68,4 @@ const Header1 = ({ isOpen, toggleMenu }) =>  {
   )
 }
 
-export default Header1
+export default Header1;

@@ -5,7 +5,7 @@ import Trending from './Trending'
 import BestSellersSection from './BestSellersSection'
 import Bestoneforyou from './Bestoneforyou'
 import TrustpilotReviewCarousel from './TrustpilotReview'
-import Newsletter from './Newsletter'
+import Newsletter from './Newsletter/Newsletter'
 
 
 const Home = () => {
@@ -17,7 +17,7 @@ const Home = () => {
 <BestSellersSection/>
 <Bestoneforyou/>
 <TrustpilotReviewCarousel/>
-<Newsletter/>
+
 
 </>
   )

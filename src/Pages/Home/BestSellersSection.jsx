@@ -29,15 +29,21 @@ const BestSellersSection = () => {
     pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1280,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
         },
       },
       {
@@ -50,15 +56,19 @@ const BestSellersSection = () => {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white overflow-hidden sm:overflow-auto">
       <h2 className="text-center text-3xl font-bold text-blue-600 mb-10">Shop Best Sellers</h2>
-      <div className="container mx-auto px-5">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <Slider {...settings}>
           {bestSellers.map((item, index) => (
             <div key={index} className="text-center px-4">
-              <img src={item.img} alt={item.name} className="mx-auto w-40 h-40 object-contain hover:scale-110 transition-transform duration-300" />
-              <h3 className="mt-4 text-gray-700 text-lg">{item.name}</h3>
-              <p className="text-blue-600 text-xl font-semibold">{item.price}</p>
+              <img 
+                src={item.img} 
+                alt={item.name} 
+                className="mx-auto w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 object-contain hover:scale-110 transition-transform duration-300" 
+              />
+              <h3 className="mt-4 text-gray-700 text-lg md:text-xl">{item.name}</h3>
+              <p className="text-blue-600 text-xl font-semibold md:text-2xl">{item.price}</p>
             </div>
           ))}
         </Slider>
