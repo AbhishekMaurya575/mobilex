@@ -4,6 +4,8 @@ import Home from "./Pages/Home/Home";
 import Layout from "./components/Layout";
 import Collections from "./Pages/Collections/Collections";
 import ContactUs from "./Pages/Contactus/ContactUs";
+import Catalog from "./Pages/Catalog/Catalog";
+import Clearance from "./Pages/Clearance/Clearance";
 
 
 const router = createBrowserRouter([
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
         element: <Collections/>,
       },
       {path: "/contactus", element: <ContactUs/>},
+      {path: "/catalog", element: <Catalog/>},
+      {path: "clearance", element: <Clearance/>},
     ],
   },
 ]);
