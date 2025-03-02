@@ -1,14 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Heart } from 'lucide-react';
 import axios from 'axios';
 
 const CatalogCard = ({ title, img, price }) => {
+  const [wishlist, setWishlist] = useState(false);
+
+  const toggleWishlist = () => {
+    setWishlist(!wishlist);
+    if (!wishlist) {
+      alert(`${title} added to wishlist`);
+    } else {
+      alert(`${title} removed from wishlist`);
+    }
+  };
+
   return (
     <motion.div
-      className="relative rounded-2xl overflow-hidden group cursor-pointer shadow-lg border"
+      className="relative rounded-2xl overflow-hidden group cursor-pointer shadow-lg border pointer-events-none"
       whileHover={{ scale: 1.05 }}
       transition={{ duration: 0.4 }}
     >
+      <button
+        className={`absolute top-3 right-3 p-2 bg-white rounded-full shadow-md transition-all ${wishlist ? 'text-red-500' : 'text-gray-500'} pointer-events-auto`}
+        onClick={toggleWishlist}
+      >
+        <Heart size={20} className={wishlist ? 'text-red-500' : 'text-gray-500'} />
+      </button>
       <img
         src={img}
         alt={title}
