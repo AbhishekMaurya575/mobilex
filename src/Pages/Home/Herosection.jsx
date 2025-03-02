@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import laptopImage from '../../assets/dell-laptops-04-01-2024-34-272725665-as4oa7qe.avif';
 
-const product = { id: 1, title: 'Best Laptop', img: laptopImage, price: '$699' };
+const product = { id: 1, title: 'Best Laptop', img: laptopImage, price: 'Rs 15,999' };
 
 const HeroSection = () => {
   const navigate = useNavigate();

@@ -18,7 +18,7 @@ const Bestoneforyou = () => {
     const newWishlist = [...wishlist];
     newWishlist[index] = !newWishlist[index];
     setWishlist(newWishlist);
-    alert(`${products[index].name} ${newWishlist[index] ? 'added to' : 'removed from'} wishlist`);
+    alert(`${products[index].name} Rs{newWishlist[index] ? 'added to' : 'removed from'} wishlist`);
   };
 
   const handleProductClick = (product) => {

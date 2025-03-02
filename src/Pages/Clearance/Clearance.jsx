@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -16,17 +16,24 @@ const clearanceItems = [
 ];
 
 const ClearanceCard = ({ id, title, img, price }) => {
-  const [wishlist, setWishlist] = useState(false);
+  const [wishlist, setWishlist] = useState(() => {
+    const savedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    return savedWishlist.includes(id);
+  });
   const navigate = useNavigate();
 
   const toggleWishlist = (e) => {
     e.stopPropagation();
     setWishlist(!wishlist);
+    let savedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     if (!wishlist) {
+      savedWishlist.push(id);
       alert(`${title} added to wishlist`);
     } else {
+      savedWishlist = savedWishlist.filter((itemId) => itemId !== id);
       alert(`${title} removed from wishlist`);
     }
+    localStorage.setItem('wishlist', JSON.stringify(savedWishlist));
   };
 
   const handleProductClick = () => {
@@ -40,8 +47,7 @@ const ClearanceCard = ({ id, title, img, price }) => {
 
   const handleBuyNow = (e) => {
     e.stopPropagation();
-    alert(`Proceed to buy ${title}`);
-    navigate(`/checkout/${id}`);
+    navigate('/buy-now', { state: { product: { id, title, img, price } } });
   };
 
   return (

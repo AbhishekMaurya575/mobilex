@@ -12,11 +12,11 @@ import Product4 from '../../assets/Samsung-Galaxy-Book3-Pro-360-1.png';
 import Product5 from '../../assets/Samsung-Galaxy-Book3-Pro-360-1.png';
 
 const bestSellers = [
-  { id: 11, img: Product1, name: 'Boost Up Special Edition Wireless', price: '$260.00' },
-  { id: 12, img: Product2, name: 'Noise Cancelling Headphones', price: '$90.00 - $360.00' },
-  { id: 13, img: Product3, name: 'Wireless Bluetooth Speaker', price: '$90.00' },
-  { id: 14, img: Product4, name: 'Boost Up Wireless Charging', price: '$200.00' },
-  { id: 15, img: Product5, name: 'Apple iPad Air 2', price: '$87.00 - $142.00' }
+  { id: 11, img: Product1, name: 'Boost Up Special Edition Wireless', price: 'Rs 1260.00' },
+  { id: 12, img: Product2, name: 'Noise Cancelling Headphones', price: 'Rs 1900.00 - Rs1360.00' },
+  { id: 13, img: Product3, name: 'Wireless Bluetooth Speaker', price: 'Rs1990.00' },
+  { id: 14, img: Product4, name: 'Boost Up Wireless Charging', price: 'Rs1200.00' },
+  { id: 15, img: Product5, name: 'Apple iPad Air 2', price: 'Rs187.00 - Rs1142.00' }
 ];
 
 const BestSellersSection = () => {

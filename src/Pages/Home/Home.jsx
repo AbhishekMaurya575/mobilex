@@ -6,11 +6,13 @@ import BestSellersSection from './BestSellersSection'
 import Bestoneforyou from './Bestoneforyou'
 import TrustpilotReviewCarousel from './TrustpilotReview'
 import Newsletter from './Newsletter/Newsletter'
+import BuyNow from '../BuyNow/BuyNow'
 
 
 const Home = () => {
   return (
 <>
+
 <HeroSection/>
 <ProductBannerSection/>
 <Trending/>

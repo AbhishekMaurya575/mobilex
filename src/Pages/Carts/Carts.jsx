@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import BuyNow from '../BuyNow/BuyNow';
 
 const CartItem = ({ item, onRemove }) => {
   return (
@@ -50,7 +51,7 @@ const Cart = () => {
             <div className="text-right mt-6">
               <p className="text-lg font-bold">Total Items: {totalItems}</p>
               <p className="text-lg font-bold">Total Price: ₹{totalPrice}</p>
-              <button className="bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-600 mt-4">Buy Now</button>
+              <button onClick={<BuyNow/>} className="bg-green-500 text-white py-3 px-6 rounded-lg hover:bg-green-600 mt-4">Buy Now</button>
             </div>
           </>
         ) : (

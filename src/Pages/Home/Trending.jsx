@@ -4,7 +4,7 @@ import tabletImage from '../../assets/Samsung-Galaxy-Book3-Pro-360-1.png';
 
 const Trending = () => {
   const navigate = useNavigate();
-  const product = { id: 10, title: 'Top Rated Tablets', img: tabletImage, price: '$799' };
+  const product = { id: 10, title: 'Top Rated Tablets', img: tabletImage, price: 'Rs10799' };
 
   const handleShopNow = () => {
     navigate(`/product/${product.id}`, { state: { product } });

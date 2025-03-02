@@ -5,6 +5,7 @@ import { Heart } from 'lucide-react';
 import ClearanceImg1 from '../../assets/150376-v7-motorola-edge-50-pro-5g-mobile-phone-large-1.png';
 import ClearanceImg2 from '../../assets/istockphoto-1373017594-612x612.jpg';
 import ClearanceImg3 from '../../assets/S12-Ultra-Smart-Watch-4G-Sim-Card-With-Rotating-Camera.webp';
+import BuyNow from '../BuyNow/BuyNow';
 
 const clearanceItems = [
   { id: 1, title: 'Smartphone - 30% Off', img: ClearanceImg1, price: 'Rs 14,000' },
@@ -79,11 +80,12 @@ const ProductDetail = () => {
                 Add to Cart
               </button>
               <button 
-                className="bg-red-500 text-white py-3 px-6 rounded-lg hover:bg-red-600 transition-all" 
-                onClick={() => navigate(`/product/${product.id}`)}
-              >
-                Buy Now
-              </button>
+  className="bg-red-500 text-white py-3 px-6 rounded-lg hover:bg-red-600 transition-all" 
+  onClick={() => navigate('/buy-now', { state: { product } })}
+>
+  Buy Now
+</button>
+
             </div>
           </div>
         </motion.div>

@@ -9,7 +9,8 @@ import Wishlist from "./Pages/Wishlist/Wishlist";
 import AccountPage from "./Pages/Accounts/Accounts";
 import Cart from "./Pages/Carts/Carts";
 import ProductDetail from "./Pages/Productdetails/Productdetails";
-
+import BuyNow from "./Pages/BuyNow/BuyNow";
+import Result from "./Pages/Result/Result"; // Import the Result component
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,9 @@ const router = createBrowserRouter([
       { path: "/wishlist", element: <Wishlist /> },
       { path: "/account", element: <AccountPage /> },
       { path: "/cart", element: <Cart /> },
-      { path: "/product/:productId", element: <ProductDetail/> }, // Product Detail Route
+      { path: "/product/:productId", element: <ProductDetail /> },
+      { path: "/buy-now", element: <BuyNow /> },
+      { path: "/result", element: <Result /> }, // Add the result route here
     ],
   },
 ]);

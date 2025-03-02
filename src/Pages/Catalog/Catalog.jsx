@@ -3,16 +3,25 @@ import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 import axios from 'axios';
 
-const CatalogCard = ({ title, img, price }) => {
-  const [wishlist, setWishlist] = useState(false);
+const CatalogCard = ({ id, title, img, price }) => {
+  const [wishlist, setWishlist] = useState(() => {
+    // Get the saved wishlist from localStorage (if available)
+    const savedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    return savedWishlist.includes(id);
+  });
 
   const toggleWishlist = () => {
     setWishlist(!wishlist);
+    // Fetch the current wishlist from localStorage
+    let savedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     if (!wishlist) {
+      savedWishlist.push(id);
       alert(`${title} added to wishlist`);
     } else {
+      savedWishlist = savedWishlist.filter((itemId) => itemId !== id);
       alert(`${title} removed from wishlist`);
     }
+    localStorage.setItem('wishlist', JSON.stringify(savedWishlist));
   };
 
   return (
@@ -43,13 +52,18 @@ const CatalogCard = ({ title, img, price }) => {
 const Catalog = () => {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     axios.get('https://your-backend-api.com/products')
       .then(response => {
         setProducts(response.data);
+        setLoading(false);
       })
       .catch(error => {
+        setError('Error fetching products');
+        setLoading(false);
         console.error('Error fetching products:', error);
       });
   }, []);
@@ -72,9 +86,17 @@ const Catalog = () => {
           </button>
         ))}
       </div>
+      {loading && <div className="text-center text-xl">Loading products...</div>}
+      {error && <div className="text-center text-xl text-red-500">{error}</div>}
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-5">
-        {filteredProducts.map((product, index) => (
-          <CatalogCard key={index} title={product.title} img={product.img} price={product.price} />
+        {filteredProducts.map(product => (
+          <CatalogCard
+            key={product.id}
+            id={product.id}
+            title={product.title}
+            img={product.img}
+            price={product.price}
+          />
         ))}
       </div>
     </section>

@@ -13,7 +13,7 @@ const Header2 = ({ isOpen, toggleMenu }) => {
     <nav className="bg-blue-100 md:p-4 relative z-10">
       <div className="container mx-auto flex justify-center items-center">
         <ul className="hidden md:flex space-x-6 text-black font-semibold text-center">
-          {['Home', 'Catalog', 'Collections', 'Clearance', 'Sections All', 'Contact Us'].map((item, index) => (
+          {['Home', 'Catalog', 'Collections', 'Clearance', 'Contact Us'].map((item, index) => (
             <li key={index}>
               <NavLink
                 to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '')}`}
