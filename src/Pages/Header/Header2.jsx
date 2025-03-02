@@ -29,7 +29,7 @@ const Header2 = ({ isOpen, toggleMenu }) => {
       {isOpen && (
         <div className="md:hidden bg-gray-800 text-white text-left p-4 w-[50%] h-screen absolute z-50">
           <ul className="space-y-4">
-            {['Home', 'Catalog', 'Collections', 'Clearance', 'Sections All', 'Contact Us'].map((item, index) => (
+            {['Home', 'Catalog', 'Collections', 'Clearance',  'Contact Us'].map((item, index) => (
               <li key={index}>
                 <NavLink
                   to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/\s+/g, '')}`}
