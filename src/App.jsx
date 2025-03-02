@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         path: "/collections",
         element: <Collections/>,
       },
-      {path: "/Contact Us", element: <ContactUs/>},
+      {path: "/contactus", element: <ContactUs/>},
     ],
   },
 ]);
