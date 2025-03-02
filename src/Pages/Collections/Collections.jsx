@@ -1,20 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import AccessoriesImg from '../../assets/150376-v7-motorola-edge-50-pro-5g-mobile-phone-large-1.png';
+import BestsellerImg from '../../assets/ABUIABACGAAgo_y5rwYoiLqZ8wUwoAY4oAY-removebg-preview.png';
+import CameraImg from '../../assets/istockphoto-1373017594-612x612.jpg';
 
 const collections = [
-  { title: 'ACCESSORIES', img: 'src/assets/150376-v7-motorola-edge-50-pro-5g-mobile-phone-large-1.png' },
-  { title: "BESTSELLER'S", img: 'src/assets/ABUIABACGAAgo_y5rwYoiLqZ8wUwoAY4oAY-removebg-preview.png' },
-  { title: 'CAMERAS & PHOTOGRAPHY', img: 'src/assets/istockphoto-1373017594-612x612.jpg' },
-  { title: 'SMARTPHONES', img: 'src/assets/ABUIABACGAAgo_y5rwYoiLqZ8wUwoAY4oAY-removebg-preview.png' },
-  { title: 'LAPTOPS', img: 'src/assets/ABUIABACGAAgo_y5rwYoiLqZ8wUwoAY4oAY-removebg-preview.png' },
-  { title: 'GAMING', img: 'src/assets/ABUIABACGAAgo_y5rwYoiLqZ8wUwoAY4oAY-removebg-preview.png' },
-  { title: 'GAMING', img: 'src/assets/ABUIABACGAAgo_y5rwYoiLqZ8wUwoAY4oAY-removebg-preview.png' },
-  { title: 'GAMING', img: 'src/assets/ABUIABACGAAgo_y5rwYoiLqZ8wUwoAY4oAY-removebg-preview.png' },
-  { title: 'GAMING', img: 'src/assets/ABUIABACGAAgo_y5rwYoiLqZ8wUwoAY4oAY-removebg-preview.png' },
-  { title: 'GAMING', img: 'src/assets/ABUIABACGAAgo_y5rwYoiLqZ8wUwoAY4oAY-removebg-preview.png' },
-  { title: 'GAMING', img: 'src/assets/ABUIABACGAAgo_y5rwYoiLqZ8wUwoAY4oAY-removebg-preview.png' },
-  { title: 'GAMING', img: 'src/assets/ABUIABACGAAgo_y5rwYoiLqZ8wUwoAY4oAY-removebg-preview.png' },
-  
+  { title: 'ACCESSORIES', img: AccessoriesImg },
+  { title: "BESTSELLER'S", img: BestsellerImg },
+  { title: 'CAMERAS & PHOTOGRAPHY', img: CameraImg },
+  { title: 'SMARTPHONES', img: BestsellerImg },
+  { title: 'LAPTOPS', img: BestsellerImg },
+  { title: 'GAMING', img: BestsellerImg },
+  { title: 'GAMING', img: BestsellerImg },
+  { title: 'GAMING', img: BestsellerImg },
+  { title: 'GAMING', img: BestsellerImg },
+  { title: 'GAMING', img: BestsellerImg },
+  { title: 'GAMING', img: BestsellerImg },
+  { title: 'GAMING', img: BestsellerImg },
 ];
 
 const CollectionCard = ({ title, img }) => {
